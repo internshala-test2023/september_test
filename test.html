@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Borel&family=Coming+Soon&family=Open+Sans&family=Roboto&family=Ubuntu&family=Yatra+One&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" type="image/ico" href="./images/favicon.ico" />
+    <title>Quiz</title>
+</head>
+<!-- Add this CSS to your existing styles.css or within a <style> tag in your HTML -->
+<style>
+    .modal-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* This ensures it takes the full height of the viewport */
+    }
+</style>
+
+<body class="testbody">
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container" style="margin-left: 0px;">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 128 128"
+                    style="fill:#22C3E6;">
+                    <path
+                        d="M 64 6 C 32 6 6 32 6 64 C 6 96 32 122 64 122 C 96 122 122 96 122 64 C 122 32 96 6 64 6 z M 64 12 C 92.7 12 116 35.3 116 64 C 116 92.7 92.7 116 64 116 C 35.3 116 12 92.7 12 64 C 12 35.3 35.3 12 64 12 z M 71.701172 36.960938 C 70.524609 37.05 69.474609 37.8 69.099609 39 L 53.099609 87 C 52.599609 88.6 53.499609 90.300781 55.099609 90.800781 C 55.399609 91.000781 55.7 91 56 91 C 57.3 91 58.400781 90.200391 58.800781 88.900391 L 74.800781 40.900391 C 75.300781 39.300391 74.500391 37.599609 72.900391 37.099609 C 72.500391 36.974609 72.093359 36.93125 71.701172 36.960938 z M 44.037109 49.9375 C 43.274609 49.9 42.500391 50.149219 41.900391 50.699219 L 29.800781 61.800781 C 29.200781 62.400781 28.800781 63.2 28.800781 64 C 28.800781 64.8 29.200781 65.599219 29.800781 66.199219 L 41.900391 77.300781 C 42.500391 77.800781 43.200391 78.099609 43.900391 78.099609 C 44.700391 78.099609 45.499609 77.799609 46.099609 77.099609 C 47.199609 75.899609 47.100391 74.000391 45.900391 72.900391 L 36.199219 64 L 45.900391 55.099609 C 47.100391 53.999609 47.199609 52.100391 46.099609 50.900391 C 45.549609 50.300391 44.799609 49.975 44.037109 49.9375 z M 84.0625 49.9375 C 83.3 49.975 82.55 50.300391 82 50.900391 C 80.9 52.100391 80.999219 53.999609 82.199219 55.099609 L 91.900391 64 L 82.199219 72.900391 C 80.899219 74.000391 80.800391 75.899609 81.900391 77.099609 C 82.500391 77.699609 83.299609 78.099609 84.099609 78.099609 C 84.799609 78.099609 85.599609 77.800781 86.099609 77.300781 L 98.199219 66.199219 C 98.799219 65.599219 99.199219 64.8 99.199219 64 C 99.199219 63.2 98.799219 62.400781 98.199219 61.800781 L 86.199219 50.699219 C 85.599219 50.149219 84.825 49.9 84.0625 49.9375 z">
+                    </path>
+                </svg>
+
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li>
+                        <h1 style="font-family: 'Ubuntu', sans-serif;">ㅤQUIZ</h1>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- ========================================= -->
+    <!-- Button trigger modal -->
+    <br>
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Instructions
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Instructions</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <h6>This test contains 10 questions.</h6>
+                            </li>
+                            <li>
+                                <h6>Each question carries 1 mark(Q1 - Q9), expect for last question carries 10 marks,
+                                    there will be negative marking.</h6>
+                            </li>
+                            <li>
+                                <h6>Students would be shortlisted according to their marks.</h6>
+                            </li>
+                            <li>
+                                <h6>Make sure fill your details correcty, as we would contact you after results.</h6>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ========================================= -->
+
+
+
+    <br>
+    <div class="test-container">
+        <ul class="quiz">
+            <li>
+                <h4>1) Which of the following is true about a "while" loop in most programming languages?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question0" value="A" /><span>a) It always executes at least
+                                once.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="B" /><span>b) It only executes if the
+                                condition is false.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="C" /><span>c) It's primarily used for
+                                iterating over collections.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="D" /><span>d) It doesn't support loop
+                                conditions.</span></label>
+                    </li>
+                </ul>
+            </li>
+            <br>
+            <li>
+                <h4>2) Which of the following is used to style the appearance of a webpage?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question1" value="A" /><span>a) HTML </span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="B" /><span> b) JavaScript</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="C" /><span>c) CSS</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="D" /><span>d) Python</span></label>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <li>
+                <h4>3) Which data type is used to store whole numbers in programming?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question2" value="A" /><span>a) Integer</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="B" /><span>b) Float</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="C" /><span>c) String</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="D" /><span>d) Boolean</span></label>
+                    </li>
+                </ul>
+            </li>
+            <br>
+            <!-- </ul>
+
+        <ul class="quiz"> -->
+            <li>
+                <h4>4) What is the purpose of the "if" statement in programming?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question0" value="A" /><span>a) To create a
+                                loop.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="B" /><span>b) To declare a
+                                variable.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="C" /><span>c) To perform conditional
+                                branching</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="D" /><span>d) To print text on the
+                                screen.</span></label>
+                    </li>
+                </ul>
+            </li>
+            <br>
+            <li>
+                <h4>5) What is the difference between a stack and a queue?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question1" value="A" /><span>a) Stacks use FIFO
+                                (First-In-First-Out) order, while queues use LIFO (Last-In-First-Out)
+                                order.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="B" /><span> b) Stacks use LIFO order, while
+                                queues use FIFO order.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="C" /><span>c) Stacks and queues are the same
+                                data structure.</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="D" /><span>d) Stacks and queues both use a
+                                priority-based ordering.</span></label>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <li>
+                <h4>6) In which sorting algorithm is the worst-case time complexity always O(n log n)?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question2" value="A" /><span>a) Bubble Sort</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="B" /><span>b) Insertion Sort</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="C" /><span>c) Merge Sort</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="D" /><span>d) Quick Sort</span></label>
+                    </li>
+                </ul>
+            </li>
+
+            <br>
+            <li>
+                <h4>7) Which of the following data structures is most suitable for implementing an LRU (Least Recently
+                    Used) cache?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question0" value="A" /><span>a) Stack</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="B" /><span>b) Queue</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="C" /><span>c) Hash Map</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="D" /><span>d) Linked List</span></label>
+                    </li>
+                </ul>
+            </li>
+
+            <br>
+            <li>
+                <h4>8) In a typical binary search tree (BST), what is the time complexity of finding the kth smallest
+                    element in the tree?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question0" value="A" /><span>a) O(log n)</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="B" /><span>b) O(n)</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="C" /><span>c) O(n log n)</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question0" value="D" /><span>d) O(1)</span></label>
+                    </li>
+                </ul>
+            </li>
+
+            <br>
+            <li>
+                <h4>9) Which of the following sorting algorithms has the best average-case time complexity?</h4>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question2" value="A" /><span>a) Bubble Sort</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="B" /><span>b) Insertion Sort</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="C" /><span>c) Merge Sort</span></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="D" /><span>d) Quick Sort</span></label>
+                    </li>
+                </ul>
+            </li>
+
+            <br>
+            <li>
+                <h4>10) You are given a list of intervals as a 2D array. An interval consists of two values, start and
+                    end. Your task is to find the minimum number of intervals that need to be removed to make the
+                    remaining intervals non-overlapping. Write the code for given problem in any programming language.
+                </h4>
+                <ul class="choices">
+                    <li>
+                        <div class="code-editor">
+                            <div class="line-numbers">
+                                <pre>
+                                    <span>1</span>
+                                    <span>2</span>
+                                    <!-- Add more line numbers as needed -->
+                                </pre>
+                            </div>
+                            <div class="code-area">
+                                <textarea id="code" rows="10" cols="50"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <br>
+
+    <!-- ---- -->
+    <div class="container-details">
+        <div class="dropdown">
+            <div class="dropdown-content" id="detailsForm">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="college">College:</label>
+                        <input type="text" id="college" name="college" placeholder="Enter your college" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester:</label>
+                        <input type="text" id="semester" name="semester" placeholder="Enter your semester" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <br>
+    <div class="button-container">
+        <button type="button" class="btn btn-primary" id="submit-button">Submit</button>
+        <div class="hidden" id="auth-buttons">
+            <a href="https://www.youtube.com/watch?v=RnpyRe_7jZA"><button class="button google-button">
+                <i class="fab fa-windows"></i> <img src="./images/google.png"
+                    style="height: 30px;"><span>&nbsp;&nbsp;</span>Continue with Google
+            </button></a>
+            
+            <a href="https://www.youtube.com/watch?v=RnpyRe_7jZA"><button class="button microsoft-button">
+                    <i class="fab fa-windows"></i> <img src="./images/microsoft.png"
+                        style="height: 30px;"><span>&nbsp;&nbsp;</span>Continue with Microsoft
+                </button></a>
+
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top myfooter text-white
+        bg-dark">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-white">© 2023 Internshala</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/Internshala?utm_source=IS_footer">
+                    <img class="bi" width="24" height="24" src="./images/twitter.png" alt="">
+                </a></li>
+            <li class="ms-3"><a class="text-body-secondary"
+                    href="https://www.instagram.com/internshala/?utm_source=IS_footer">
+                    <img class="bi" width="24" height="24" src="./images/instagram.png" alt="">
+                </a></li>
+            <li class="ms-3 mx-4"><a class="text-body-secondary"
+                    href="https://www.linkedin.com/company/internshala/?utm_source=is-footer">
+                    <img class="bi" width="24" height="24" src="./images/linkedin.png" alt=""></a></li>
+        </ul>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

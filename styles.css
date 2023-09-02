@@ -1,0 +1,251 @@
+/* font-family: 'Borel', cursive;
+font-family: 'Coming Soon', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Yatra One', cursive; */
+
+
+.myhr {
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.text {
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.quiz,
+.choices {
+    list-style-type: none;
+    padding: 0;
+}
+
+.choices li {
+    margin-bottom: 5px;
+}
+
+.choices label {
+    display: flex;
+    align-items: center;
+}
+
+.choices label,
+input[type="radio"] {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+.view-results {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: inherit;
+    color: white;
+    background: teal;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+.my-results {
+    padding: 1rem;
+    /* border: 1px solid goldenrod; */
+}
+
+.test-container {
+    padding-left: 3%;
+}
+
+/* Reset some default browser styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the code editor container */
+.code-editor {
+    display: flex;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* Style the line numbers container */
+.line-numbers {
+    width: 40px;
+    /* Adjust as needed */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Style the line numbers */
+.line-numbers pre {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Style the code area */
+.code-area {
+    flex-grow: 1;
+}
+
+/* Style the textarea */
+textarea {
+    border: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    font-family: monospace;
+    outline: none;
+}
+
+/* styles.css */
+
+.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    /* Rounded corners */
+    border: none;
+}
+
+
+.google-button,
+.microsoft-button {
+    background-color: #ffffff;
+    color: #000000;
+    /* Black text color */
+    border: 1px solid #000000;
+    /* Black border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.testbody {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F6F4EB;
+}
+
+.btn-custom {
+    background-color: #A8DF8E;
+    font-weight: bolder;
+}
+
+.container-details {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.container-tq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    font-size: 18px;
+}
+
+.thankyou-body{
+    background-color: aliceblue;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
